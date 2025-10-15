@@ -1,105 +1,55 @@
-# 📚  Tipos de Serviço de Nuvem na Azure e Banco de Dados no Azure  
+# Configurando-uma instancia de Banco de Dados na Azure
+Meu repositório criado para o projeto Dio Configurando uma instância de Banco de Dados na Azure
 
----
+# Configurando uma Instância de Banco de Dados no Azure
+Meu repositório criado para o projeto Dio Configurando uma Instância de Banco de Dados no Azure
 
-## 🎯 Objetivo 
-Nesta resumo vamos:  
-- Entender os **modelos de serviço em nuvem** (IaaS, PaaS e SaaS).  
-- Explorar o **modelo de responsabilidade compartilhada**.  
-- Realizar um **desafio prático** criando uma instância de banco de dados no Azure.  
-- Consolidar o aprendizado documentando tudo no GitHub.  
+## Passo a Passo para Configurar uma Instância de Banco de Dados no Azure
 
----
+### Passo 1: Acessar o Portal do Azure 
+1 - **Acesse o portal do Azure:** Vá para portal.azure.com e faça login com sua conta Microsoft.
 
-## 1. Introdução à Nuvem e Serviços do Azure  
+### Passo 2: Criar um Banco de Dados SQL
+2 - __Pesquisar por SQL Databases:__ No menu de navegação à esquerda, clique em “SQL Databases” ou digite “SQL Databases” na barra de pesquisa e selecione a opção.
 
-A computação em nuvem oferece diferentes níveis de serviços que variam de acordo com o quanto o cliente precisa gerenciar e o quanto o provedor assume.  
-No Azure, esses modelos se dividem principalmente em **IaaS, PaaS e SaaS**.  
+3 - __Criar um novo Banco de Dados:__ Na página de SQL Databases, clique em “Criar” e depois em “Banco de Dados SQL do Azure”.
 
----
+### Passo 3: Configurar o Banco de Dados
 
-## 2. Modelos de Serviço em Nuvem  
+4 - __Configurações Básicas:__
+   - **Assinatura:** Selecione a assinatura do Azure que você deseja usar.
+   - **Grupo de Recursos:** Escolha um grupo de recursos existente ou crie um novo.
+   - **Nome do Banco de Dados:** Dê um nome ao seu banco de dados.
+   - **Servidor:** Crie um novo servidor ou selecione um servidor existente. Para criar um novo servidor, forneça um nome de servidor, um nome de administrador e uma senha.
+   - **Localização:** Selecione a localização do servidor.
 
-### 🔹 **IaaS (Infrastructure as a Service)**  
-- Cliente gerencia: Sistema Operacional, Aplicações, Dados e Segurança.  
-- Provedor gerencia: Rede, Servidores, Armazenamento e Virtualização.  
-- **Exemplo:** Máquinas Virtuais no Azure.  
+5 - __Configurações de Elastic Pool (opcional):__
+   - **Elastic Pool:** Se você deseja usar um pool elástico, selecione “Sim” e configure o pool. Caso contrário, selecione “Não”.
 
-💡 **Quando usar:** ideal para quem precisa de flexibilidade total para instalar e configurar sistemas e aplicações.  
+6 - __Configurações de Computação e Armazenamento:__
+   - **Nível de Serviço:** Escolha entre as opções disponíveis (por exemplo, Básico, Standard, Premium) com base nas suas necessidades de desempenho e custo.
+   - **Tamanho do Computador:** Selecione o tamanho do computador e a quantidade de armazenamento.
 
----
+### Passo 4: Configurações Adicionais
 
-### 🔹 **PaaS (Platform as a Service)**  
-- Cliente gerencia: Aplicações e Dados.  
-- Provedor gerencia: Infraestrutura, SO, Banco de Dados, Middleware e Ferramentas.  
-- **Exemplo:** Azure App Service, Azure SQL Database.  
+7 - __Configurações de Rede:__
+   - **Rede Virtual:** Configure a rede virtual se necessário.
+   - **Regras de Firewall:** Adicione regras de firewall para permitir o acesso ao banco de dados de endereços IP específicos.
 
-💡 **Quando usar:** ótimo para desenvolvedores que querem focar apenas no código e deixar a gestão da infraestrutura para o provedor.  
+8 - __Configurações de Segurança:__
+   - **Autenticação:** Configure a autenticação do banco de dados (por exemplo, autenticação do SQL ou do Azure AD).
+   - **Auditoria e Segurança Avançada:** Ative ou desative as opções de auditoria e segurança avançada conforme necessário.
 
----
+### Passo 5: Revisar e Criar
 
-### 🔹 **SaaS (Software as a Service)**  
-- Cliente apenas consome o software pronto.  
-- Provedor gerencia toda a infraestrutura e o aplicativo.  
-- **Exemplo:** Microsoft 365, Outlook.com.  
+9 - __Revisar e Criar:__ Revise todas as configurações e clique em “Revisar e Criar”. Após a validação, clique em “Criar” para iniciar a implantação do banco de dados.
 
-💡 **Quando usar:** indicado quando o objetivo é simplesmente **usar a aplicação final** sem se preocupar com instalação ou manutenção.  
+### Passo 6: Conectar ao Banco de Dados
 
----
+10 - __Conectar-se ao Banco de Dados:__ Após a criação, vá para a página do banco de dados e clique em “Conectar”. Siga as instruções para se conectar usando ferramentas como SQL Server Management Studio (SSMS) ou Azure Data Studio.
 
-## 3. Modelo de Responsabilidade Compartilhada  
+## Links Úteis 
 
-No Azure (e em qualquer provedor de nuvem), as responsabilidades são divididas:  
+Implantar e configurar servidores, instâncias e bancos de dados para o SQL Azure:https://learn.microsoft.com/pt-br/training/modules/azure-sql-deploy-configure/
 
-- **On-premises** → Cliente gerencia tudo.  
-- **IaaS** → Cliente ainda cuida de bastante coisa (SO, apps e dados).  
-- **PaaS** → Cliente se preocupa apenas com dados e aplicativos.  
-- **SaaS** → Cliente só consome; provedor faz todo o resto.  
-
----
-
-## 4. Desafio Prático – Criando um Banco de Dados no Azure  
-
-### 🎯 Objetivo  
-Configurar uma **instância de Banco de Dados SQL no Azure** para aplicar os conceitos aprendidos.  
-
-### 📌 Passo a Passo  
-
-1. Acesse o [Portal do Azure](https://portal.azure.com/).  
-2. No painel de serviços, selecione **Azure SQL**.  
-3. Clique em **Criar instância de banco de dados**.  
-4. Preencha as informações básicas:  
-   - **Grupo de Recursos**  
-   - **Nome do Servidor**  
-   - **Nome do Banco de Dados**  
-   - **Localização (Região)**  
-   - **Nível de desempenho (DTUs/vCores)**  
-5. Configure rede e autenticação.  
-6. Revise e crie o recurso.  
-7. Após a implantação, conecte-se ao banco usando **SSMS** ou **Azure Data Studio** para validar.  
-
----
-
-## 5. Aprendizados das Aulas  
-
-- Diferenças entre **IaaS, PaaS e SaaS** ficaram mais claras.  
-- Entendimento do **modelo de responsabilidade compartilhada**.  
-- Experiência prática na **criação de uma instância SQL no Azure**.  
-- Importância de documentar tudo em **Markdown no GitHub** para fixação e futuro estudo.  
-
----
-
-## 6. Referências  
-
-- [Documentação Oficial Microsoft Azure](https://learn.microsoft.com/pt-br/azure/)  
-- [Criar uma Instância Gerenciada de SQL no Azure](https://learn.microsoft.com/pt-br/azure/azure-sql/database/sql-database-paas-overview)  
-- [Guia de Markdown no GitHub](https://guides.github.com/features/mastering-markdown/)  
-
----
-
-## 👨‍🏫 Conclusão  
-
-Hoje aprendemos que a nuvem não é “um único modelo”, mas sim **camadas de serviços** que variam do controle total pelo cliente até a entrega completa pelo provedor.  
-Além disso, vimos como aplicar isso na prática configurando um **Banco de Dados SQL no Azure**.  
-
----
+Como criar banco de dados Azure SQL: https://youtu.be/CIzs7KY3Jl4?si=9v7tsQ5AxVAA7XL4
